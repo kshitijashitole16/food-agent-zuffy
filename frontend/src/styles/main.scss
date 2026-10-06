@@ -1,0 +1,12 @@
+// Feature partials share tokens and breakpoint mixins. No generated CSS is edited here.
+@use 'base';
+@use 'shared';
+@use 'layout';
+@use 'components/hero';
+@use 'components/chat';
+@use 'components/preferences';
+@use 'components/food';
+@use 'pages/assistant';
+@use 'pages/menu';
+@use 'pages/orders';
+@use 'components/cart';

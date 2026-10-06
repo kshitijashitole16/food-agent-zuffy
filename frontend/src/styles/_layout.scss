@@ -1,0 +1,280 @@
+@use 'mixins';
+
+.header {
+  height: 88px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  gap: 26px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 33px;
+  font-weight: 850;
+  letter-spacing: -1.7px;
+  padding: 0;
+  color: var(--dark);
+}
+.brand-dot {
+  color: var(--orange);
+}
+.brand-icon {
+  width: 40px;
+  height: 43px;
+  border-radius: 14px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 34px;
+  line-height: 30px;
+  transform: rotate(-6deg);
+  position: relative;
+  letter-spacing: 0;
+  font-weight: 750;
+}
+.brand-icon > span {
+  position: absolute;
+  bottom: 1px;
+  left: 14px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  line-height: 14px;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.header nav button {
+  font-size: 13px;
+  font-weight: 650;
+  position: relative;
+  height: 88px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7b827d;
+}
+.header nav button.active {
+  color: var(--dark);
+}
+.header nav button.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--orange);
+  border-radius: 3px 3px 0 0;
+}
+.nav-ai {
+  font-size: 9px;
+  color: var(--orange);
+  background: #fff0e9;
+  letter-spacing: 0.7px;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+.bag-button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--dark);
+  color: white;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.bag-button:hover {
+  background: #365947;
+}
+.bag-button b {
+  background: #4e645a;
+  border-radius: 5px;
+  padding: 2px 5px;
+  font-size: 10px;
+  font-weight: 600;
+}
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 28px;
+}
+.top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 29px 0 17px;
+  font-size: 11px;
+  color: #898f87;
+}
+.top-line > span {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.green-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #91a16a;
+  border-radius: 100%;
+}
+.connection-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 10px;
+  color: #8b7771;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #f9eee8;
+}
+.connection-pill > i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #d19b62;
+}
+.connection-pill.connected {
+  background: #eef3e8;
+  color: #708753;
+}
+.connection-pill.connected > i {
+  background: #7c9b60;
+}
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 28px 30px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  color: #b0b7a5;
+}
+footer strong {
+  font-size: 18px;
+  color: #8f9c80;
+  letter-spacing: -0.8px;
+  margin-right: 10px;
+}
+.orange-heart {
+  color: #eaa289;
+}
+@include mixins.up('wide') {
+  .header-inner,
+  main,
+  footer {
+    max-width: 1220px;
+  }
+}
+@include mixins.down('laptop') {
+  .header nav {
+    gap: 20px;
+  }
+}
+@include mixins.down('tablet') {
+  .header {
+    height: 74px;
+  }
+  .header-inner {
+    padding: 0 20px;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .header nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 74px;
+    height: 47px;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    gap: 36px;
+  }
+  .header nav button {
+    height: 47px;
+    font-size: 11px;
+  }
+  .brand {
+    font-size: 29px;
+  }
+  .brand-icon {
+    width: 34px;
+    height: 36px;
+    font-size: 28px;
+    line-height: 25px;
+    border-radius: 11px;
+  }
+  .brand-icon > span {
+    left: 11px;
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  .bag-button {
+    font-size: 10px;
+    padding: 10px 12px;
+  }
+  .bag-button svg {
+    width: 17px;
+  }
+  .header + .none {
+    display: none;
+  }
+  main {
+    padding: 47px 20px 0;
+  }
+  .top-line {
+    margin-top: 24px;
+    font-size: 9px;
+  }
+  .top-line > span {
+    max-width: 58%;
+    line-height: 1.7;
+  }
+  .connection-pill {
+    font-size: 9px;
+    gap: 5px;
+    padding: 6px 7px;
+  }
+  footer {
+    padding: 24px 20px;
+    font-size: 8px;
+    flex-wrap: wrap;
+    line-height: 1.8;
+  }
+}
+@include mixins.down('mobile') {
+  main {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .header-inner {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .top-line > span {
+    font-size: 8px;
+  }
+  .connection-pill {
+    font-size: 8px;
+  }
+}

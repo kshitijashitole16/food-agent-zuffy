@@ -1,0 +1,67 @@
+@use '../mixins';
+
+.assistant-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 268px;
+  gap: 24px;
+}
+.favorites {
+  margin: 43px 0 48px;
+}
+.section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.section-title h2 {
+  font-size: 22px;
+  letter-spacing: -0.6px;
+  font-weight: 720;
+  color: var(--dark);
+  margin-top: 9px;
+}
+@include mixins.down('laptop') {
+  .assistant-layout {
+    grid-template-columns: minmax(0, 1fr) 235px;
+    gap: 18px;
+  }
+}
+@include mixins.down('tablet') {
+  .assistant-layout {
+    grid-template-columns: 1fr;
+  }
+  .favorites-grid .food-card:last-child {
+    display: none;
+  }
+  .section-title h2 {
+    font-size: 20px;
+  }
+  .section-title .text-button {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .section-title .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+  .favorites {
+    margin: 32px 0;
+  }
+}
+@include mixins.down('mobile') {
+  .section-title {
+    align-items: flex-start;
+  }
+  .section-title h2 {
+    font-size: 18px;
+  }
+  .section-title > .text-button {
+    font-size: 9px;
+    max-width: 85px;
+    white-space: normal;
+    line-height: 1.7;
+    flex-shrink: 0;
+  }
+}

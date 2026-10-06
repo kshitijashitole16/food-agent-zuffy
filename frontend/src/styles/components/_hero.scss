@@ -1,0 +1,251 @@
+@use '../mixins';
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 273px;
+  margin-bottom: 27px;
+  padding: 5px 45px 10px 0;
+}
+.hero .eyebrow {
+  color: var(--orange);
+  font-size: 9px;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-weight: 760;
+  line-height: 1.12;
+  letter-spacing: -2px;
+  font-size: 48px;
+  color: var(--dark);
+}
+.hero h1 > span {
+  color: #98aa85;
+}
+.hero p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #858c82;
+  margin-top: 16px;
+}
+.hero-illustration {
+  width: 290px;
+  height: 245px;
+  position: relative;
+  margin-right: 48px;
+}
+.hero-plate {
+  position: absolute;
+  left: 36px;
+  top: 8px;
+  width: 203px;
+  height: 203px;
+  border: 13px solid #fff;
+  border-radius: 50%;
+  background: #f0f2e7;
+  box-shadow:
+    0 18px 35px #4658360e,
+    inset 0 0 0 3px #e3e8d8;
+  display: grid;
+  place-items: center;
+  transform: rotate(12deg);
+}
+.hero-plate > span {
+  font-size: 123px;
+  line-height: 1;
+  filter: drop-shadow(0 8px 5px #2a292313);
+  transform: rotate(-12deg);
+}
+.plate-star {
+  position: absolute;
+  color: #ef9970;
+  font-style: normal;
+  font-size: 32px;
+  right: -42px;
+  top: 17px;
+  transform: rotate(-12deg);
+}
+.orbit {
+  position: absolute;
+  z-index: 1;
+  font-size: 40px;
+  filter: drop-shadow(0 8px 5px #4558360d);
+}
+.orbit-one {
+  top: -1px;
+  left: -6px;
+  transform: rotate(-22deg);
+}
+.orbit-two {
+  right: -10px;
+  bottom: 35px;
+  transform: rotate(18deg);
+  font-size: 48px;
+}
+.floating-note {
+  position: absolute;
+  bottom: 5px;
+  left: 17px;
+  background: white;
+  border: 1px solid #efeee4;
+  padding: 12px 15px;
+  font-size: 11px;
+  border-radius: 12px;
+  transform: rotate(-7deg);
+  box-shadow: 0 5px 15px #2f4b2910;
+  color: #879372;
+}
+.floating-note span {
+  color: var(--orange);
+  margin-left: 13px;
+}
+.hero-squiggle {
+  position: absolute;
+  bottom: 45px;
+  left: -25px;
+  font-size: 38px;
+  color: #9dad80;
+}
+@include mixins.up('wide') {
+  .hero {
+    min-height: 285px;
+  }
+  .hero h1 {
+    font-size: 53px;
+  }
+}
+@include mixins.down('laptop') {
+  .hero-illustration {
+    margin-right: 5px;
+  }
+  .hero {
+    padding-right: 15px;
+  }
+  .hero h1 {
+    font-size: 44px;
+  }
+}
+@include mixins.down('tablet') {
+  .hero {
+    min-height: 244px;
+    margin-bottom: 18px;
+    padding-right: 0;
+  }
+  .hero h1 {
+    font-size: 37px;
+    letter-spacing: -1.8px;
+  }
+  .hero p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .hero-illustration {
+    width: 185px;
+    height: 198px;
+    margin: 0;
+  }
+  .hero-plate {
+    left: 23px;
+    top: 26px;
+    width: 143px;
+    height: 143px;
+    border-width: 9px;
+  }
+  .hero-plate > span {
+    font-size: 86px;
+  }
+  .orbit-one {
+    font-size: 26px;
+    top: 13px;
+    left: 3px;
+  }
+  .orbit-two {
+    font-size: 29px;
+    right: -1px;
+    bottom: 38px;
+  }
+  .floating-note {
+    font-size: 8px;
+    bottom: 5px;
+    padding: 9px 10px;
+    left: 8px;
+  }
+  .floating-note span {
+    margin-left: 4px;
+  }
+  .plate-star {
+    font-size: 22px;
+    right: -21px;
+    top: 0;
+  }
+  .hero-squiggle {
+    font-size: 25px;
+    left: -4px;
+    bottom: 25px;
+  }
+  .hero .eyebrow {
+    font-size: 8px;
+    letter-spacing: 1.3px;
+  }
+}
+@include mixins.down('mobile') {
+  .hero {
+    min-height: 258px;
+    position: relative;
+  }
+  .hero > div:first-child {
+    position: relative;
+    z-index: 2;
+  }
+  .hero h1 {
+    font-size: 35px;
+  }
+  .hero-illustration {
+    width: 132px;
+    position: absolute;
+    right: -6px;
+    top: 41px;
+    opacity: 0.6;
+  }
+  .hero-plate {
+    left: 17px;
+    top: 25px;
+    width: 109px;
+    height: 109px;
+  }
+  .hero-plate > span {
+    font-size: 65px;
+  }
+  .hero p {
+    font-size: 10px;
+    max-width: 250px;
+  }
+  .hero .eyebrow {
+    font-size: 7px;
+  }
+  .hero-squiggle,
+  .floating-note,
+  .orbit-one {
+    display: none;
+  }
+  .orbit-two {
+    bottom: 45px;
+    right: 4px;
+    font-size: 24px;
+  }
+  .plate-star {
+    right: -10px;
+    font-size: 18px;
+  }
+}
+.hero-plate > .food-svg {
+  font-size: 145px;
+}
+@include mixins.down('mobile') {
+  .hero-illustration {
+    display: none;
+  }
+  .hero {
+    min-height: 228px;
+  }
+}

@@ -1,0 +1,128 @@
+@use '../mixins';
+
+.orders-section {
+  padding: 23px 0 48px;
+  min-height: 690px;
+}
+.orders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px;
+}
+.order-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+}
+.order-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.order-card h3 {
+  font-size: 18px;
+  color: var(--dark);
+  margin-top: 6px;
+}
+.order-badge {
+  font-size: 9px;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #f1f5e8;
+  color: #8f9b65;
+}
+.order-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  margin: 20px 0;
+  color: #869477;
+  font-size: 11px;
+}
+.order-items > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  line-height: 1.6;
+}
+.order-items strong {
+  color: #68795a;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.order-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 25px 0;
+}
+.order-steps:before {
+  position: absolute;
+  content: '';
+  top: 11px;
+  left: 15%;
+  width: 70%;
+  height: 1px;
+  background: #e5e9de;
+}
+.order-steps > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  z-index: 1;
+  width: 33.3%;
+}
+.order-steps span {
+  height: 23px;
+  width: 23px;
+  background: #eef1e6;
+  color: #adb59e;
+  border-radius: 100%;
+  display: grid;
+  place-items: center;
+  font-size: 9px;
+  border: 2px solid white;
+}
+.order-steps small {
+  font-size: 9px;
+  color: #b1b7a5;
+}
+.order-steps .done span {
+  background: #819b68;
+  color: white;
+}
+.order-steps .done small {
+  color: #869770;
+}
+.order-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  font-size: 12px;
+  color: #819470;
+}
+@include mixins.down('tablet') {
+  .orders-grid {
+    grid-template-columns: 1fr;
+  }
+  .orders-section {
+    min-height: 650px;
+    padding-top: 20px;
+  }
+}
+@include mixins.down('mobile') {
+  .orders-section > .eyebrow {
+    font-size: 7px;
+  }
+}
+.order-items .food-svg {
+  font-size: 21px;
+}
